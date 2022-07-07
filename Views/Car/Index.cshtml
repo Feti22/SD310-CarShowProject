@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Brand>
+
+@foreach(Brand b in Model)
+{
+    if (@b.IsActive)
+    {
+        <h2>@b.Name</h2>
+        <ul>
+            @foreach (Vehicle v in b.Vehicles)
+            {
+                <li>@v.Name (@v.MSRP)</li>
+            }
+        </ul>
+    }
+}
+@*@foreach(Vehicle v in Model) 
+{
+    <h3>@v.Name (@v.Brand.Name)</h3>
+}*@
